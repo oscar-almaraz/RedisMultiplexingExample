@@ -1,0 +1,25 @@
+// * Summary *
+
+BenchmarkDotNet v0.15.2, Windows 11 (10.0.26100.4652/24H2/2024Update/HudsonValley)
+Unknown processor
+.NET SDK 9.0.302
+  [Host]     : .NET 8.0.18 (8.0.1825.31117), X64 RyuJIT AVX2 [AttachedDebugger]
+  DefaultJob : .NET 8.0.18 (8.0.1825.31117), X64 RyuJIT AVX2
+
+
+| Method                   | Mean      | Error     | StdDev    | Median    |
+|------------------------- |----------:|----------:|----------:|----------:|
+| 'Singleton Multiplexer'  |   1.272 s |  0.0285 s |  0.0841 s |   1.258 s |
+| 'Multiple Multiplexers'  | 282.248 s | 10.6086 s | 30.0949 s | 271.779 s |
+| 'Pooled Multiplexer (8)' |   1.385 s |  0.0275 s |  0.0729 s |   1.372 s |
+
+// * Warnings *
+Environment
+  Summary -> Benchmark was executed with attached debugger
+MultimodalDistribution
+  RedisMultiplexingBenchmarks.'Singleton Multiplexer': Default -> It seems that the distribution is bimodal (mValue = 3.31)
+
+// * Hints *
+Outliers
+  RedisMultiplexingBenchmarks.'Multiple Multiplexers': Default  -> 7 outliers were removed (6.15 m..6.38 m)
+  RedisMultiplexingBenchmarks.'Pooled Multiplexer (8)': Default -> 2 outliers were removed (1.62 s, 1.63 s)
